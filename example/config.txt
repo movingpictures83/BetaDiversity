@@ -1,0 +1,2 @@
+Prefix plugins/BetaDiversity/example
+Plugin BetaDiversity inputfile parameters.txt outputfile beta_div

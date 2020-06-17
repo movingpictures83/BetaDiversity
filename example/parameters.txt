@@ -1,0 +1,5 @@
+biomfile	plugins/BetaDiversity/example/filtered_otu_table.biom
+tree	plugins/BetaDiversity/example/rep_set.tre
+euclidean
+weighted_unifrac
+unweighted_unifrac
