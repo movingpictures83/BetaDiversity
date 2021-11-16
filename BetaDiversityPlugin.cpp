@@ -28,13 +28,13 @@ void BetaDiversityPlugin::output(std::string file) {
 //beta_diversity.py -i filtered_otu_table.biom -m euclidean,weighted_unifrac,unweighted_unifrac -t rep_set.tre -o beta_div
    //std::string command = "export OLDPATH=${PYTHONPATH}; export PYTHONPATH=${PYTHON2_DIST_PACKAGES}:${PYTHON2_SITE_PACKAGES}:${PYTHONPATH}; beta_diversity.py ";
    std::string command = "beta_diversity.py ";
- command += "-i "+parameters["biomfile"]+" -m ";
+ command += "-i "+std::string(PluginManager::prefix())+"/"+parameters["biomfile"]+" -m ";
  for (int i = 0; i < metrics.size(); i++) {
     command += metrics[i];
     if (i != metrics.size()-1){command += ",";}
     else {command += " ";}
  }
- command += "-t "+parameters["tree"]+" ";
+ command += "-t "+std::string(PluginManager::prefix())+"/"+parameters["tree"]+" ";
  command += "-o "+file+"; cp "+file+"/* "+file+"/..; export PYTHONPATH=OLDPATH";
  std::cout << command << std::endl;
 
